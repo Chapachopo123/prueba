@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Miedo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            margin: 0;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        #scareButton {
+            padding: 20px;
+            font-size: 18px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #scareSquare {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 1s ease-out;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="scareButton">Ábreme a tu propio riesgo</button>
+        <div id="scareSquare" class="hidden"></div>
+    </div>
+    <script>
+        document.getElementById('scareButton').addEventListener('click', function() {
+            var scareSquare = document.getElementById('scareSquare');
+            scareSquare.classList.remove('hidden');
+            scareSquare.style.transform = 'translate(-50%, -50%) scale(50)';
+            
+            setTimeout(function() {
+                window.location.href = 'https://www.youtube.com/watch?v=W7AaRQacKTk';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
